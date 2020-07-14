@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CreatorModeManager : MonoBehaviour
 {
+    /* Bug-List:
+     * UI selection and placing body overlaps. Most likely because of colliders. 
+     * 
+     */
     private GameManager gm;
     private GameObject selected_body_part;
 
@@ -46,6 +50,7 @@ public class CreatorModeManager : MonoBehaviour
             Destroy(selected_body_part);
         }
         selected_body_part = Instantiate(gm.GetBodyPart(ID));
+        selected_body_part.transform.parent = gm.base_body.transform; 
         BodyPart tempPart = selected_body_part.GetComponent<BodyPart>();
         tempPart.current_selected = true; 
 

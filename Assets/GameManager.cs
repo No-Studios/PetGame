@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
     private GameObject[] body_parts;
 
     public Texture2D default_cursor;
-    public Texture2D place_bodypart_cursor; 
+    public Texture2D place_bodypart_cursor;
+    public GameObject base_body;
     private static GameManager instance;
 
     private void Awake()
