@@ -44,8 +44,8 @@ public class Pet : MonoBehaviour
     private float current_drinking_time;
 
 
-    private Queue<PetState> queued_actions; 
-
+    private Queue<PetState> queued_actions;
+    private SlimeFeeder slime_feeder_ref; 
     // Start is called before the first frame update
     void Start()
 
@@ -59,7 +59,9 @@ public class Pet : MonoBehaviour
         current_hungry_time = hungry_timer;
         current_thirsty_time = thirsty_timer;
 
-        happiness_level = max_happiness_level; 
+        happiness_level = max_happiness_level;
+
+        slime_feeder_ref = GameObject.FindGameObjectWithTag("Bottle").GetComponent<SlimeFeeder>();
     }
 
     // Update is called once per frame
@@ -120,11 +122,22 @@ public class Pet : MonoBehaviour
                     state = PetState.Idle;
                     isThirsty = false;
                 }
-                else
+                else if(!slime_feeder_ref.isEmpty)
                 {
                     current_drinking_time -= Time.deltaTime;
                 }
+                else
+                {
+                    state = PetState.WaitingToDrink;
+                }
 
+                break;
+            case PetState.WaitingToDrink:
+                Debug.Log("Pet is waiting for feeder to be filled");
+                if (!slime_feeder_ref.isEmpty)
+                {
+                    state = PetState.Drinking;
+                }
                 break;
             case PetState.Eating:
                 anim.SetBool("Hungry", true);
@@ -184,6 +197,8 @@ public class Pet : MonoBehaviour
     {
         Eating, 
         Drinking,
+        WaitingToDrink,
+        WaitingToEat,
         Idle
     }
     
