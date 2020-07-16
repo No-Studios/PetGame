@@ -11,6 +11,7 @@ public class ClickAndDrag : MonoBehaviour
     private bool _isClick = false;
     private Rigidbody2D _can = null;
     private SpriteRenderer _spriteRenderer = null;
+    public bool bottlePour = false;
     // Start is called before the first frame update
     void Awake()
     {
@@ -38,13 +39,25 @@ public class ClickAndDrag : MonoBehaviour
         _can.position = _canSpot.position;
     }
 
-    void OnTriggerEnter2D()
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        _spriteRenderer.sprite = _pourSprite;
+        if(collider.tag == "Bottle" || collider.tag == "Toe")
+        {
+            _spriteRenderer.sprite = _pourSprite;
+        }
+        
+        if(collider.tag == "Bottle")
+        {
+            bottlePour = true;
+        }
     }
 
     void OnTriggerExit2D()
     {
         _spriteRenderer.sprite = _normalSprite;
+        if(bottlePour == true)
+        {
+            bottlePour = false;
+        }
     }
 }
