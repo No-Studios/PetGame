@@ -285,9 +285,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _manager: {fileID: 717875823}
+  _pet: {fileID: 0}
   _camera: {fileID: 154379010}
   _spawnPoint: {fileID: 784055046}
   _toe: {fileID: 1384986835}
+  eating: 0
 --- !u!1 &154379008
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,6 +587,7 @@ MonoBehaviour:
   _minY: -3.78
   _maxY: 2
   _clickAndDrag: {fileID: 1913536130}
+  _pet: {fileID: 0}
 --- !u!61 &348765502
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -611,6 +614,53 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.13, y: 5.18}
   m_EdgeRadius: 0
+--- !u!1 &420482111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 420482113}
+  - component: {fileID: 420482112}
+  m_Layer: 0
+  m_Name: ToeDestroyer
+  m_TagString: ToeDestroyer
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!58 &420482112
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420482111}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.07133055, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.083571
+--- !u!4 &420482113
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420482111}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.84, y: -3.96, z: -3.0136719}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &484246138
 GameObject:
   m_ObjectHideFlags: 0
@@ -775,9 +825,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _manager: {fileID: 717875823}
+  _pet: {fileID: 0}
   _camera: {fileID: 154379010}
   _spawnPoint: {fileID: 784055046}
   _toe: {fileID: 1384986835}
+  eating: 0
 --- !u!1 &717875822
 GameObject:
   m_ObjectHideFlags: 0
@@ -1371,6 +1423,7 @@ GameObject:
   - component: {fileID: 1384986837}
   - component: {fileID: 1384986836}
   - component: {fileID: 1384986839}
+  - component: {fileID: 1384986840}
   m_Layer: 0
   m_Name: toe
   m_TagString: Untagged
@@ -1479,6 +1532,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1384986840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384986835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0776fa73b3959154cbb0a151a65714a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _toes: {fileID: 484246144}
 --- !u!1 &1413613346
 GameObject:
   m_ObjectHideFlags: 0

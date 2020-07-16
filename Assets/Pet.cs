@@ -33,7 +33,7 @@ public class Pet : MonoBehaviour
     [SerializeField]
     private float thirsty_timer = 10f;
     private float current_thirsty_time; 
-    private PetState state = PetState.Idle;
+    public PetState state = PetState.Idle;
 
     [SerializeField]
     private float eating_timer = 5f;

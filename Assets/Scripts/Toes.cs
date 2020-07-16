@@ -5,6 +5,7 @@ using UnityEngine;
 public class Toes : MonoBehaviour
 {
     [SerializeField] private Manager _manager = null;
+    [SerializeField] private Pet _pet = null;
     //variables for clicking
     [SerializeField] private Camera _camera = null;
 
@@ -15,10 +16,9 @@ public class Toes : MonoBehaviour
     //variables for spawner
     [SerializeField] private Transform _spawnPoint = null;
     [SerializeField] private GameObject _toe = null;
+
+    [HideInInspector] public bool eating = false;
     
-
-
-
     void Start()
     {
         _collider = GetComponent<Collider2D>();
@@ -40,6 +40,11 @@ public class Toes : MonoBehaviour
                 print(_manager.toeNumber);
                 ToeSpawn();
             }
+        }
+
+        if(_pet.state == Pet.PetState.Eating)
+        {
+            eating = true;
         }
     }
 

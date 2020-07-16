@@ -9,6 +9,7 @@ public class SlimeFeeder : MonoBehaviour
     [SerializeField] private float _minY = 0f;
     [SerializeField] private float _maxY = 2f;
     [SerializeField] private ClickAndDrag _clickAndDrag = null;
+    [SerializeField] private Pet _pet = null;
     // Start is called before the first frame update
 
     void Update()
@@ -17,6 +18,10 @@ public class SlimeFeeder : MonoBehaviour
         {
             _transform.position += new Vector3(0f, 1f, 0f) * _riseSpeed;
             //print("goingUp");
+        }
+        if(_pet.state == Pet.PetState.Drinking && _transform.position.y >= _minY)
+        {
+            _transform.position += new Vector3(0f, 1f, 0f) * (-1 * _riseSpeed);
         }
     }
 }
