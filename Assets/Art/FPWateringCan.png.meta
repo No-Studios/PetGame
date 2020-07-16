@@ -1,7 +1,16 @@
 fileFormatVersion: 2
-guid: 27b3528b8f3a8b84a8eb8cc2cc4e7759
+guid: 29167764b1113da40b4cd68259e5735d
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 5255671032631924233
+    second: FPWateringCan_0
+  - first:
+      213: -6107862751648795983
+    second: FPWateringCan_1
+  - first:
+      213: 7094042569178535069
+    second: FPWateringCan_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -97,7 +106,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: FPWateringCan_0
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 1152
+        width: 2206
+        height: 1249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 906165c55f4efe840800000000000000
+      internalID: 5255671032631924233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FPWateringCan_1
+      rect:
+        serializedVersion: 2
+        x: 2396
+        y: 1187
+        width: 2389
+        height: 1160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b2322f20338c3ba0800000000000000
+      internalID: -6107862751648795983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FPWateringCan_2
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 2589
+        width: 158
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d94d26d712a137260800000000000000
+      internalID: 7094042569178535069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
