@@ -26,13 +26,12 @@ public class Pet : MonoBehaviour
     private int happiness_level;
     public bool game_start; 
 
-    [SerializeField]
-    private float hungry_timer = 10f;
-    private float current_hungry_time;
+    public float hungry_timer = 10f;
+    public float current_hungry_time = 10f;
 
-    [SerializeField]
-    private float thirsty_timer = 10f;
-    private float current_thirsty_time; 
+    public float thirsty_timer = 10f;
+    public float current_thirsty_time = 10f; 
+
     public PetState state = PetState.Idle;
 
     [SerializeField]
