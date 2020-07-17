@@ -11,9 +11,18 @@ public class SlimeFeeder : MonoBehaviour
     [SerializeField] private ClickAndDrag _clickAndDrag = null;
     [SerializeField] private Pet _pet = null;
     public bool isEmpty = false;
-    public bool filledEnough = false; 
+    public bool filledEnough = false;
+    [SerializeField]
+    private AudioClip[] clips = null;
+    public AudioClip drinkSound;
+    public AudioSource audioSource = null;
+    private bool emptySoundPlayed = false;
+        
     // Start is called before the first frame update
-
+    private void Start()
+    {
+        audioSource = audioSource.GetComponent<AudioSource>();
+    }
     void Update()
     {
         if(_clickAndDrag.bottlePour == true && _transform.localPosition.y <= _maxY)
@@ -30,14 +39,26 @@ public class SlimeFeeder : MonoBehaviour
         if (_transform.localPosition.y < _minY)
         {
             Debug.Log("Slime empty");
-            isEmpty = true;
+            if (emptySoundPlayed == false)
+            {
+                emptySoundPlayed = true;
+                AudioClip clip = GetRandomClip();
+                audioSource.PlayOneShot(clip);
+                isEmpty = true;
+            }
+            
         }
         else if (_transform.localPosition.y > _minY + 1) 
         {
             Debug.Log("Slime filled");
             isEmpty = false;
+            emptySoundPlayed = false;
         }
 
         //if(_transform.localPosition.y >)
+    }
+    private AudioClip GetRandomClip()
+    {
+        return clips[UnityEngine.Random.Range(0, clips.Length)];
     }
 }

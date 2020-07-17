@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class Pet : MonoBehaviour
 {
+    public AudioSource audioSource = null;
+    private AudioClip drinkSound;
+
     public string pet_name;
 
     [SerializeField]
@@ -49,6 +52,7 @@ public class Pet : MonoBehaviour
     void Start()
 
     {
+        audioSource = audioSource.GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         anim.SetBool("Hungry", false);
         anim.SetBool("Thirsty", false);
@@ -116,6 +120,7 @@ public class Pet : MonoBehaviour
                 // If no slime inside of tube, increment pet thirst by 1
                 if (current_drinking_time <= 0)
                 {
+                    audioSource.PlayOneShot(drinkSound);
                     current_drinking_time = drinking_timer;
                     anim.SetBool("Thirsty", false);
                     state = PetState.Idle;
