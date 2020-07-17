@@ -52,7 +52,7 @@ public class SlimeFeeder : MonoBehaviour
         {
             Debug.Log("Slime filled");
             isEmpty = false;
-            emptySoundPlayed = false;
+            emptySoundPlayed = false;   
         }
 
         //if(_transform.localPosition.y >)
