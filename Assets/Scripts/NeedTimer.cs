@@ -13,7 +13,7 @@ public class NeedTimer : MonoBehaviour
 
     private float _initialScale;
     private float _initialTime;
-    private float _timeLeft = 10f;
+    [SerializeField] private float _timeLeft = 10f;
 
     // Start is called before the first frame update
     void Awake()
@@ -34,11 +34,12 @@ public class NeedTimer : MonoBehaviour
         } else if(_thirst == false && _hunger == false && _fun == true){
             _timeLeft = _drums._drumTimeLeft;
         }
-        print(_drums._drumTimeLeft);
+        //print(_drums._drumTimeLeft);
         //_timeLeft -= Time.deltaTime;
         //print(_pet.current_hungry_time);
         //print(_initialTime);
         //print(_initialScale);
+        //_timeLeft = _pet.current_hungry_time;
 
 
         float newX = Mathf.Lerp(0, _initialScale, _timeLeft / _initialTime);
