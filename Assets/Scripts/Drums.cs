@@ -25,7 +25,7 @@ public class Drums : MonoBehaviour
     void Update()
     {
         _drumTimeLeft -= Time.deltaTime *timeChange;
-        Debug.Log(_drumTimeLeft);
+        
 
         if(Input.GetMouseButtonDown(0))
         {
@@ -48,7 +48,7 @@ public class Drums : MonoBehaviour
         }
         if (_drumTimeLeft >= _drumStartTime)
         {
-            Debug.Log("weee");
+            
             _drumTimeLeft = _drumStartTime;
             druming = false;
             timeChange = 1;
