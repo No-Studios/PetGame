@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Pet : MonoBehaviour
 {
     public AudioSource audioSource = null;
-    private AudioClip drinkSound;
+    public AudioClip drinkSound;
 
     public string pet_name;
 
